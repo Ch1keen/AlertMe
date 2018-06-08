@@ -8,34 +8,36 @@ int main()
     std::cout << std::ctime(&timeNow);
     std::cout << Calander::isLeapYear(2018) << std::endl;
 
-    int wd = Calander::getWeekday(2018,5);   
+    int wd = Calander::getWeekday(1970,1);   
 
     switch(wd) {
         case 0:
-            printf("Sunday");
+            printf("Sunday\n");
             break;
         case 1:
-            printf("Monday");
+            printf("Monday\n");
             break;
         case 2:
-            printf("Tuesday");
+            printf("Tuesday\n");
             break;
         case 3:
-            printf("Wednesday");
+            printf("Wednesday\n");
             break;
         case 4:
-            printf("Thursday");
+            printf("Thursday\n");
             break;
         case 5:
-            printf("Friday");
+            printf("Friday\n");
             break;
         case 6:
-            printf("Saturday");
+            printf("Saturday\n");
             break;
         default:
             printf("...What?\n");
             printf("%d\n", wd);
             break;
     }
+
+    Calander::Calander(2018, 6);
     return 0;
 }
