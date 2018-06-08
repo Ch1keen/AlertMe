@@ -1,0 +1,7 @@
+namespace Anniversary
+{
+    class Event
+    {
+        //
+    };
+}
