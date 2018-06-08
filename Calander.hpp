@@ -44,6 +44,8 @@ void Calander::Calander(int year, int month)
                   << "\t";
         if( (j%7 == (7-weekday)) && !(j == days[month-1]) ) std::cout << std::endl;
     }
+
+    std::cout << std::endl;
 } 
 
 // Calculates the week of the day

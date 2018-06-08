@@ -7,14 +7,18 @@ namespace Anniversary
         int  year;
         int  month;
         int  day;
+        std::string title;
         std::string comment;
 
     public:
-        Event(std::string yyyymmdd)
+        Event(std::string yyyymmdd, std::string title="", std::string comment="")
         {
             year  = std::stoi(  yyyymmdd.substr(0,4)  );
-            month = std::stoi(  yyyymmdd.substr(3,2)  );
-            day   = std::stoi(  yyyymmdd.substr(5,4)  );
+            month = std::stoi(  yyyymmdd.substr(4,2)  );
+            day   = std::stoi(  yyyymmdd.substr(6,2)  );
+
+            this->title = title;
+            this->comment = comment;
         }
         
         // worthless but important getter
