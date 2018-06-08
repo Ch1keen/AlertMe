@@ -1,11 +1,12 @@
 #include <ctime>
-#include <stdio.h>
+#include <iostream>
+#include <iomanip> //Just for setw() setfill()
 
 namespace Calander
 {
     bool isLeapYear(int year);
     void Calander(int year, int month);
-    int getWeekday(int year, int month);
+    int  getWeekday(int year, int month);
 }
 
 /*
@@ -27,17 +28,22 @@ void Calander::Calander(int year, int month)
     int days[12] = {31,28,31,30,31,30,31,31,30,31,30,31};
     if(  isLeapYear(year)  )   days[1] = 29;
 
-    printf("========= %4d.%02d =========\n", year, month);
-    printf("sun\tmon\ttue\twed\tthu\tfri\tsat\n");
+    std::cout << "========= "
+              << std::setw(2) << std::setfill('0') << year
+              << "."
+              << std::setw(2) << std::setfill('0') << month
+              << " ========="  << std::endl;
+
+    std::cout << "sun\tmon\ttue\twed\tthu\tfri\tsat\n";
     int weekday = getWeekday(year, month);
 
-    for(int j=0; j<getWeekday(year, month); j++)    printf("\t");
+    for(int j=0; j<getWeekday(year, month); j++)    std::cout << "\t";
     for(int j=1; j<=days[month-1]; j++)
     {
-        printf("%02d\t", j);
-        if( (j%7 == (7-weekday)) && !(j == days[month-1]) ) printf("\n");
+        std::cout << std::setw(2) << std::setfill('0') << j
+                  << "\t";
+        if( (j%7 == (7-weekday)) && !(j == days[month-1]) ) std::cout << std::endl;
     }
-
 } 
 
 // Calculates the week of the day
