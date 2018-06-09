@@ -8,20 +8,17 @@ std::string Anniversary::Event::getTitle()   {  return title; };
 std::string Anniversary::Event::getComment() {  return comment; };
 
 Anniversary::Event::Event(std::string yyyymmdd,
-                          std::string title="Untitled",
-                          std::string comment="")
+                          std::string title,
+                          std::string comment)
 {
     year  = std::stoi(  yyyymmdd.substr(0,4)  );
     month = std::stoi(  yyyymmdd.substr(4,2)  );
     day   = std::stoi(  yyyymmdd.substr(6,2)  );
 
-    Anniversary::Event::setComment( comment );
-
     this->title = title;
-    this->comment = comment;
+    Anniversary::Event::setComment( comment );
 }
         
-
 void Anniversary::Event::setComment( std::string comment )
 {
     if( !comment.compare("") )
@@ -38,10 +35,7 @@ void Anniversary::Event::setComment( std::string comment )
             comment += "축하해줍시다.";
         }
     }
-    else
-    {
-        this->comment = comment;
-    }
+    this->comment = comment;
 
     return;
 }

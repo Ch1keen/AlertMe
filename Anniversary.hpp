@@ -11,7 +11,9 @@ namespace Anniversary
         std::string comment;
 
     public:
-        Event(std::string yyyymmdd, std::string title, std::string comment);
+        Event(std::string yyyymmdd,
+              std::string title="Untitled",
+              std::string comment="");
         
         // worthless but important getter
         int getYear();
