@@ -1,13 +1,14 @@
-AlertMe : main.o Calander.o
-		gcc main.o Calander.o -o AlertMe
+AlertMe : main.o Calander.o Anniversary.o
+		g++ main.o Calander.o Anniversary.o -o AlertMe
 
 main.o : main.cpp
-		gcc -c main.cpp -o main.o
+		g++ -c main.cpp -o main.o
 
 Calander.o : Calander.cpp
-		gcc -c Calander.cpp -o Calander.o
+		g++ -c Calander.cpp -o Calander.o
 
 Anniversary.o : Anniversary.cpp
+		g++ -c Anniversary.cpp -o Anniversary.o
 
 clean :
 		rm *.o AlertMe 
