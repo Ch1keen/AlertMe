@@ -34,7 +34,7 @@ void Calander::Calander(int year, int month)
               << std::setw(2) << std::setfill('0') << month
               << " ========="  << std::endl;
 
-    std::cout << "sun\tmon\ttue\twed\tthu\tfri\tsat\n";
+    std::cout << "SUN\tMON\tTUE\tWED\tTHU\tFRI\tSAT\n";
     int weekday = getWeekday(year, month);
 
     for(int j=0; j<getWeekday(year, month); j++)    std::cout << "\t";
