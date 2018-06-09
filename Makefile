@@ -7,5 +7,7 @@ main.o : main.cpp
 Calander.o : Calander.cpp
 		gcc -c Calander.cpp -o Calander.o
 
+Anniversary.o : Anniversary.cpp
+
 clean :
 		rm *.o AlertMe 
