@@ -11,7 +11,9 @@ namespace Anniversary
         std::string comment;
 
     public:
-        Event(std::string yyyymmdd, std::string title="", std::string comment="")
+        Event(std::string yyyymmdd,
+              std::string title="Untitled",
+              std::string comment="")
         {
             year  = std::stoi(  yyyymmdd.substr(0,4)  );
             month = std::stoi(  yyyymmdd.substr(4,2)  );
@@ -25,8 +27,9 @@ namespace Anniversary
         int getYear()   {  return year;  }
         int getMonth()  {  return month; }
         int getDay()    {  return day;   }
+        std::string getTitle() { return title; };
         std::string getComment() { return comment; };
 
-        void setComment( std::string );
+        void setComment( std::string title );
     };
 }
